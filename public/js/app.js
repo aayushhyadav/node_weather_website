@@ -2,6 +2,9 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
+const messageThree = document.querySelector('#message-3')
+const messageFour = document.querySelector('#message-4')
+const messageFive = document.querySelector('#message-5')
 const myForecast = document.querySelector('#myForecast')
 
 weatherForm.addEventListener('submit', (e) => {
@@ -18,7 +21,12 @@ weatherForm.addEventListener('submit', (e) => {
             }
             else{
                 messageOne.textContent = data.location
-                messageTwo.textContent = data.forecast
+                messageTwo.textContent = data.description
+                messageThree.textContent = data.curTemp
+                messageFour.textContent = 'Feels like ' + data.feelTemp
+                messageFive.textContent = 'Humidity is ' + data.humidity
+
+                change(data.description)
             }
         })
     })  
@@ -44,9 +52,44 @@ myForecast.addEventListener('click', () => {
                     }
                     else{
                         messageOne.textContent = data.location
-                        messageTwo.textContent = data.forecast
+                        messageTwo.textContent = data.description
+                        messageThree.textContent = data.curTemp + ' Celsius'
+                        messageFour.textContent = 'Feels like ' + data.feelTemp + ' Celsius'
+                        messageFive.textContent = 'Humidity is ' + data.humidity + '%'        
+
+                        change(data.description)
                     }
                 })
             })
     })
 })
+
+const change = (description) => {
+    if(description == 'Haze'){
+        document.body.style.backgroundImage = "url('/images/Haze.jpg')"
+    }
+
+    else if(description == 'Sunny'){
+        document.body.style.backgroundImage = "url('/images/Sunny.jpg')"
+    }
+
+    else if(description == 'Partly cloudy'){
+        document.body.style.backgroundImage = "url('/images/PartlyCloudy.jpg')"
+    }
+
+    else if(description == 'Overcast'){
+        document.body.style.backgroundImage = "url('/images/Overcast.jpg')"
+    }
+
+    else if(description.toLowerCase().includes('rain')){
+        document.body.style.backgroundImage = "url('/images/Rain.png')"
+    }
+
+    else if(description.toLowerCase().includes('snow')){
+        document.body.style.backgroundImage = "url('/images/snowfall.jpg')"
+    }
+
+    else{
+        document.body.style.backgroundImage = "url('/images/Plain.jpg')"
+    }
+}

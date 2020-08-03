@@ -8,10 +8,13 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: url('/images/Plain.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 footer {
-    color : #888888;
+    color : darkred;
     border-top: 1px solid #eeeeee;
     margin-top: 16px;
     padding: 16px 0;
@@ -33,7 +36,7 @@ h1 {
 
 header a {
     margin-right: 16px;
-    color: #888888;
+    color:darkred;
     text-decoration: none;
 }
 
@@ -52,4 +55,34 @@ button {
     color: white;
     padding: 8px;
     cursor: pointer;
+}
+
+#message-1 {
+    color:black;
+    font-family: cursive;
+    font-size: large;
+}
+
+#message-2 {
+    color: black;
+    font-family: cursive;
+    font-size: large;
+}
+
+#message-3 {
+    color: black;
+    font-family: cursive;
+    font-size: large;
+}
+
+#message-4 {
+    color: black;
+    font-family: cursive;
+    font-size: large;
+}
+
+#message-5 {
+    color: black;
+    font-family: cursive;
+    font-size: large;
 }
