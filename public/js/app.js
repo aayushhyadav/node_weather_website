@@ -82,7 +82,7 @@ const change = (description) => {
     }
 
     else if(description.toLowerCase().includes('rain')){
-        document.body.style.backgroundImage = "url('/images/Rain.png')"
+        document.body.style.backgroundImage = "url('/images/Rain.jpg')"
     }
 
     else if(description.toLowerCase().includes('snow')){
