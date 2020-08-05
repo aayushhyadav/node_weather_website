@@ -13,6 +13,9 @@ weatherForm.addEventListener('submit', (e) => {
 
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ' '
+    messageThree.textContent = ' '
+    messageFour.textContent = ' '
+    messageFive.textContent = ' '
 
     fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
@@ -43,6 +46,9 @@ myForecast.addEventListener('click', () => {
     navigator.geolocation.getCurrentPosition((position) => {
         messageOne.textContent = 'Loading...'
         messageTwo.textContent = ' '
+        messageThree.textContent = ' '
+        messageFour.textContent = ' '
+        messageFive.textContent = ' '
 
         fetch('/weather?address=' + position.coords.longitude + ',' + position.coords.latitude)
             .then((response) => {
